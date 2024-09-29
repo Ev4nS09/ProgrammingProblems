@@ -1,62 +1,68 @@
-#include <climits>
 #include <iostream>
-#include <vector>
-#include <tuple>
-#include <string>
 
-std::vector<int> problem(std::vector<int> array, std::vector<int> mods)
+inline void s();
+
+inline void s()
 {
 
+        int v_size = 0;
+        int n_mods = 0;
 
-    return {0};
-}
+        std::cin >> v_size;
+        std::cin >> n_mods;
 
-std::tuple<int, int> vector_max_index(std::vector<int> vector)
-{
-    int max = INT_MIN;
-    int index = 0;
+        int max = 0;
+        std::cin >> max;
 
-    for(int i = 0; i < vector.size(); i++)
-    {
-        if(vector.at(i) > max)
+        for(int i = 1; i < v_size; ++i)
         {
-            index = i;
-            max = vector.at(i);
-        }
-    }
+            int current; std::cin >> current;
 
-    return std::make_tuple(max, index);
+            if(current > max)
+            {
+                max = current;
+            }
+        }
+
+        while(n_mods-- > 0)
+        {
+
+
+            char sign;
+            std::cin >> sign;
+
+            int first;
+            int second;
+
+            std::cin >> first;
+            std::cin >> second;
+
+            if(first <= max && max <= second)
+            {
+                if(sign == '-')
+                    --max;
+                else
+                    ++max;
+            }
+
+            
+            std::cout << max << ' ';
+        }
+
+        std::cout << '\n';
 }
 
 int main()
 {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+
     int tests = 0;
     std::cin >> tests;
     
     while(tests-- > 0)
     {
-        int v_size = 0;
-        int n_mods = 0;
-
-
-        std::vector<int> v(v_size);
-        std::vector<int> output(v_size);
-
-
-        std::string line;
-        std::getline(std::cin, line);
-        std::cout << line.size() << std::endl;
-
-        while(line.size()) {int x = 0; std::cin >> x; v.push_back(x);}
-
-        std::tuple<int, int> tuple = vector_max_index(v); 
-        int index = std::get<0>(tuple);
-        int max = std::get<1>(tuple);
-
-       // while(n_mods-- > 0)
-        {
-            
-        }
+        s();
     }
         
     return 0;
