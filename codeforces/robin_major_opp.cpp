@@ -2,15 +2,16 @@
 
 void solve()
 {
-    double x, y, d;
-    std::cin >> x >> y >> d;
+    int year, span;
+    std::cin >> year >> span;
 
-    int result = (ceil(((double)std::max(x, y)) / d)) * 2;
+    if(year % 2 != 0)
+    {
+        year++;
+    }
 
-    
-    result = x > y && ceil(x / d) != ceil(y / d) ? result - 1: result; 
+    std::cout << (((year / 2)+ (span / 2)) % 2 == 0 ? "YES" : "NO") << '\n';  
 
-    std::cout << result << '\n';
 }
 
 int main()
