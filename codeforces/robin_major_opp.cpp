@@ -4,14 +4,10 @@ void solve()
 {
     int year, span;
     std::cin >> year >> span;
+    bool is_ded_even = ((year - span) / 2 + year - span % 2) % 2 == 0; 
+    bool is_year_even = (year / 2 + year % 2) % 2 == 0;
 
-    if(year % 2 != 0)
-    {
-        year++;
-    }
-
-    std::cout << (((year / 2)+ (span / 2)) % 2 == 0 ? "YES" : "NO") << '\n';  
-
+    std::cout << (is_year_even == is_ded_even ? "YES" : "NO") << "\n";
 }
 
 int main()
@@ -22,7 +18,7 @@ int main()
     int tests;
     std::cin >> tests;
 
-    while(tests-- > 0)
+    while(tests--)
     {
         solve();
     }
