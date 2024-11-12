@@ -17,4 +17,13 @@ int main()
         solve();
     }
 
+    int* a = (int*) malloc(sizeof(int));
+    int* b = (int*) malloc(sizeof(int));
+
+    *a = 5;
+    *b = 10;
+
+    a = (int*) ((long long)a ^ (long long) b);
+    b = (int*) ((long long) a ^ (long long) b);
+    a = (int*) ((long long) a ^ (long long) b);
 }
