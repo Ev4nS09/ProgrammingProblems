@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+void solve()
+{
+    int n;
+    std::vector<std::vector<int>> matrix(RR, std::vector<int>(2));
+    
+    int a
+    for (int n = 0; n < N; n++) { // loop over n from 0 to N-1 (inclusive)
+        C[n][0] = 1;
+        C[n][n] = 1;
+        for (int k = 1; k < n; k++) // loop over k from 1 to n-1 (inclusive)
+            C[n][k] = C[n][k - 1] + C[n - 1][k - 1];
+    }
+}
+
+int main()
+{
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+
+    int tests; std::cin >> tests;
+
+    while(tests--)
+    {
+        solve();
+    }
+
+}
