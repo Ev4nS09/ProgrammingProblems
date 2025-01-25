@@ -2,7 +2,6 @@
 
 void solve()
 {
-
     int n_values, n_queries;
     std::cin >> n_values >> n_queries;
 
